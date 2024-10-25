@@ -11,6 +11,8 @@ func main() {
 	const conferenceTickets uint = 50
 	var remainingTickets uint = 50
 
+	greetUsers()
+
 	fmt.Printf("Welcom to %v booking application\n", conferenceName)
 	fmt.Printf("We have %v tickets and %v tickets are still available\n", conferenceTickets, remainingTickets)
 	fmt.Println("Get your tickets now!")
@@ -34,11 +36,9 @@ func main() {
 		fmt.Println("Enter number of tickets you want to book: ")
 		fmt.Scan(&userTickets)
 
-		isValidName := len(firstName) >=2 && len(lastName) >=2
+		isValidName := len(firstName) >= 2 && len(lastName) >= 2
 		isVaidEmail := strings.Contains(email, "@") && strings.Contains(email, ".")
 		isValidTicketNumber := userTickets > 0 && userTickets <= int(remainingTickets)
-
-
 
 		// check if userTickets is greater than remainingTickets
 		if isVaidEmail && isValidName && isValidTicketNumber {
@@ -75,4 +75,25 @@ func main() {
 			}
 		}
 	}
+
+	city := "London"
+
+	switch city {
+	case "New York":
+		//Execute code for NY
+	case "Singapore":
+		//Execute code for Sing
+	case "London":
+		//Execute code for London
+	case "Berlin":
+		//Execute code for Berlin
+	case "Hong Kong":
+		//Execute code for HK
+	default:
+		fmt.Println("No valid city selected.")
+	}
+}
+
+func greetUsers() {
+	fmt.Println("Welcome to our conference")
 }
